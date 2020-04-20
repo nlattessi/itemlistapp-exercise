@@ -14,6 +14,10 @@ docker exec -it itemlist_app bash bootstrap.sh
 
 Go to http://localhost:8000 and try this app :)
 
+## Sample images
+
+Some images are provided in _sample_images_ folder
+
 ## Tests
 
 Feature tests can be run executing:
