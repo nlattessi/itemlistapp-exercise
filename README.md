@@ -4,7 +4,7 @@
 
 Build and start up containers.
 ```
-docker-compose -d --build
+docker-compose up -d --build
 ```
 
 Run bootstrap script.
