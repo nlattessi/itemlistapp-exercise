@@ -1,0 +1,46 @@
+version: '3'
+services:
+  #PHP Service
+  app:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: itemlist_app
+    tty: true
+    working_dir: /var/www
+    volumes:
+      - ./:/var/www
+      - ./docker/php/local.ini:/usr/local/etc/php/conf.d/local.ini
+    networks:
+      - itemlist-network
+
+  #Nginx Service
+  webserver:
+    image: nginx:alpine
+    container_name: itemlist_webserver
+    tty: true
+    ports:
+      - 8000:80
+    volumes:
+      - ./:/var/www
+      - ./docker/nginx/conf.d/:/etc/nginx/conf.d/
+    networks:
+      - itemlist-network
+
+  #DB Service
+  mongo:
+    image: mongo:latest
+    container_name: itemlist_mongo
+    tty: true
+    environment:
+      MONGO_INITDB_ROOT_USERNAME: root
+      MONGO_INITDB_ROOT_PASSWORD: root
+    ports:
+      - 27017:27017
+    networks:
+      - itemlist-network
+
+#Docker Networks
+networks:
+  itemlist-network:
+    driver: bridge

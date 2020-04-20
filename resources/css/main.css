@@ -1,0 +1,43 @@
+@import "tailwindcss/base";
+@import "tailwindcss/components";
+
+body {
+    font-family: 'Noto Sans', sans-serif;
+}
+
+.card {
+    @apply flex flex-col justify-end items-center text-5xl text-white h-full w-full rounded-lg overflow-hidden bg-cover bg-center bg-no-repeat;
+    box-shadow: rgba(3, 8, 20, 0.1) 0px 0.15rem 0.5rem, rgba(2, 8, 20, 0.1) 0px 0.075rem 0.175rem;
+    transition: all 500ms;
+ }
+  
+.card:hover {
+    box-shadow: rgba(2, 8, 20, 0.1) 0px 0.35em 1.175em, rgba(2, 8, 20, 0.08) 0px 0.175em 0.5em;
+    transform: translateY(-3px) scale(1.1);
+ }
+
+.ghost {
+    opacity: .5;
+    background: #C8EBFB;
+}
+
+.item-list-grid {
+    @apply grid gap-4;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 240px));
+    grid-auto-rows: 240px;
+}
+
+.btn-card {
+    @apply bg-indigo-500 text-white font-bold py-1 px-2 border-b-4 border-blue-700 rounded;
+}
+
+.btn-card:hover {
+    @apply bg-indigo-400 border-indigo-500;
+}
+
+.btn-card-svg {
+    @apply w-6 h-6;
+}
+
+
+@import "tailwindcss/utilities";
