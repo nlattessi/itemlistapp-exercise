@@ -37,7 +37,7 @@ class ItemTest extends TestCase
                     [
                         'id' => $createItemResponse->json('_id'),
                         'description' => $createItemResponse->json('description'),
-                        'image' => "http://localhost/storage/public/" . $createItemResponse->json('image'),
+                        'image' => "http://localhost/storage/images/" . $createItemResponse->json('image'),
                         'position' => $createItemResponse->json('position'),
                     ],
                 ],
